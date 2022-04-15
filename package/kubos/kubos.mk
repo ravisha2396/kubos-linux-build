@@ -4,16 +4,16 @@
 #
 # This package downloads the Kubos repo,
 # globally links all the modules, and sets the
-# target for the subsequent Kubos child 
+# target for the subsequent Kubos child
 # packages
 #
 ###############################################
 KUBOS_LICENSE = Apache-2.0
 KUBOS_LICENSE_FILES = LICENSE
-KUBOS_SITE = git://github.com/kubos/kubos
-KUBOS_PROVIDES = kubos-mai400
-KUBOS_INSTALL_STAGING = YES
-KUBOS_TARGET_FINALIZE_HOOKS += KUBOS_CREATE_CONFIG
+KUBOS_SITE = https://github.com/kubos/kubos
+	KUBOS_PROVIDES = kubos-mai400
+	KUBOS_INSTALL_STAGING = YES
+	KUBOS_TARGET_FINALIZE_HOOKS += KUBOS_CREATE_CONFIG
 
 KUBOS_CONFIG_FRAGMENT_DIR = $(STAGING_DIR)/etc/kubos
 KUBOS_CONFIG_FILE = $(TARGET_DIR)/etc/kubos-config.toml
@@ -43,16 +43,16 @@ endif
 CARGO_OUTPUT_DIR = target/$(CARGO_TARGET)/release
 
 define KUBOS_INSTALL_STAGING_CMDS
-	mkdir -p $(KUBOS_CONFIG_FRAGMENT_DIR)
+mkdir -p $(KUBOS_CONFIG_FRAGMENT_DIR)
 endef
 
 define KUBOS_INSTALL_TARGET_CMDS
-	mkdir -p $(TARGET_DIR)/etc/monit.d
+mkdir -p $(TARGET_DIR)/etc/monit.d
 endef
 
 define KUBOS_CREATE_CONFIG
-	# Collect all config fragment files into the final master config.toml file
-	cat $(KUBOS_CONFIG_FRAGMENT_DIR)/* > $(KUBOS_CONFIG_FILE)
+# Collect all config fragment files into the final master config.toml file
+cat $(KUBOS_CONFIG_FRAGMENT_DIR)/* > $(KUBOS_CONFIG_FILE)
 endef
 
 
