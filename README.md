@@ -131,8 +131,8 @@ but I've copied the folders and files relevant to us here:
 /path/to/br2-ext-tree/
   |- configs/beaglebone-black_defconfig
   |
-  |- board/kubos/linux.config
-  |- board/kubos/overlay/
+  |- board/kubos/beaglebone-black/linux.config
+  |- board/kubos/beaglebone-black/overlay/
 ```
 
 The file in `configs/` is what you pass to `make BR2_EXTERNAL=../kubos-linux-build`, so
