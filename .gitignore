@@ -1,2 +1,10 @@
 *.o.cmd
 *.itb
+board/kubos/beaglebone-black/overlay/etc/network/.interfaces.un~
+board/kubos/beaglebone-black/overlay/etc/network/interfaces~
+..gitignore.un~
+.gitignore~
+board/kubos/beaglebone-black/overlay/etc/init.d/.S30usbgadget.un~
+board/kubos/beaglebone-blacik/overlay/etc/init.d/S30usbgadget~
+board/kubos/beaglebone-black/overlay/etc/init.d/S30usbgadget~
+
